@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  
+  /* Shodh Sagar Brand Palette */
+  --color-brand-green: #005b5c;    /* Primary teal-green from logo */
+  --color-brand-green-deep: #003f40; /* Deep green for footer/dark sections */
+  --color-brand-gold: #c5982f;     /* Gold accent from logo */
+  --color-brand-paper: #fffdf7;    /* Warm off-white from reference */
+  --color-brand-ink: #223534;      /* Dark ink green for text */
+  --color-brand-muted: #667573;    /* Muted green-grey for subtitles */
+  --color-brand-line: #d9d6c9;     /* Warm divider line */
+}
+
+/* Custom styles */
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  }
+  /* Subtle green-tinted section background */
+  .bg-brand-section {
+    background: linear-gradient(135deg, #f0fafa 0%, #f5f5f7 60%, #f4f1e7 100%);
+  }
+  /* Warm paper section background */
+  .bg-brand-warm {
+    background: linear-gradient(135deg, #fffdf7 0%, #f4f1e7 100%);
+  }
+  /* Subtle decorative green orb */
+  .orb-green {
+    background: radial-gradient(circle, rgba(0,91,92,0.08) 0%, transparent 70%);
+  }
+}
+
+@layer base {
+  :root {
+    --background: #f5f5f7;
+    --foreground: #223534;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f0fafa;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5d8d8;
+  border-radius: 4px;
+}
